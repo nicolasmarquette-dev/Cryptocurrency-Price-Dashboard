@@ -3,6 +3,8 @@
 import { useCryptoPrices } from "@/hooks/useCryptoPrices";
 import { buildCryptoList } from "@/utils/crypto";
 import { CryptoCard } from "../crypto-card/CryptoCard";
+import { Error } from "../error/Error";
+import { Loading } from "../loading/Loading";
 import { CryptoCardListLabels } from "./CryptoCardList.labels";
 import styles from "./CryptoCardList.module.css";
 
@@ -11,17 +13,19 @@ interface CryptoCardListProps {
 }
 
 export function CryptoCardList({ cryptoIds }: CryptoCardListProps) {
-  const { data, isLoading, error } = useCryptoPrices({
+  const { data, isLoading, error, refetch } = useCryptoPrices({
     ids: cryptoIds,
     include24hChange: true,
   });
 
   if (isLoading) {
-    return <div className={styles.message}>{CryptoCardListLabels.loading}</div>;
+    return <Loading />;
   }
 
   if (error) {
-    return <div className={styles.message}>{CryptoCardListLabels.error}</div>;
+    return (
+      <Error message={CryptoCardListLabels.error} onRetry={() => refetch()} />
+    );
   }
 
   if (!data) {

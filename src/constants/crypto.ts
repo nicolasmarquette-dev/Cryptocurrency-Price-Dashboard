@@ -1,6 +1,9 @@
 import { Crypto } from "@/types/crypto";
 
-export const CRYPTO_METADATA: Record<string, Omit<Crypto, "id" | "price" | "priceChange24h">> = {
+export const CRYPTO_METADATA: Record<
+  string,
+  Omit<Crypto, "id" | "price" | "priceChange24h">
+> = {
   bitcoin: {
     name: "Bitcoin",
     symbol: "BTC",
