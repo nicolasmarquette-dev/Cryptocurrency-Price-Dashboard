@@ -7,5 +7,7 @@ export function useCryptoPrices(simplePriceParams: SimplePriceParams) {
     queryKey: ["crypto-prices", simplePriceParams],
     queryFn: () => getSimplePrice(simplePriceParams),
     staleTime: Infinity,
+    retry: 3,
+    retryDelay: 10000,
   });
 }
