@@ -1,12 +1,35 @@
-import { Crypto } from "@/types/crypto";
+"use client";
+
+import { useCryptoPrices } from "@/hooks/useCryptoPrices";
+import { buildCryptoList } from "@/utils/crypto";
 import { CryptoCard } from "../crypto-card/CryptoCard";
+import { CryptoCardListLabels } from "./CryptoCardList.labels";
 import styles from "./CryptoCardList.module.css";
 
 interface CryptoCardListProps {
-  cryptos: Crypto[];
+  cryptoIds: string[];
 }
 
-export function CryptoCardList({ cryptos }: CryptoCardListProps) {
+export function CryptoCardList({ cryptoIds }: CryptoCardListProps) {
+  const { data, isLoading, error } = useCryptoPrices({
+    ids: cryptoIds,
+    include24hChange: true,
+  });
+
+  if (isLoading) {
+    return <div className={styles.message}>{CryptoCardListLabels.loading}</div>;
+  }
+
+  if (error) {
+    return <div className={styles.message}>{CryptoCardListLabels.error}</div>;
+  }
+
+  if (!data) {
+    return null;
+  }
+
+  const cryptos = buildCryptoList(cryptoIds, data);
+
   return (
     <div className={styles.list}>
       {cryptos.map((crypto) => (

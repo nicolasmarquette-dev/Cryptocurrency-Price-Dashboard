@@ -1,3 +1,10 @@
-export default async function Home() {
-  return <div></div>;
+import { CryptoCardList } from "@/components/crypto-card-list/CryptoCardList";
+import { CRYPTO_METADATA } from "@/constants/crypto";
+
+export default function Home() {
+  return (
+    <main style={{ padding: "2rem", maxWidth: "900px", margin: "0 auto" }}>
+      <CryptoCardList cryptoIds={Object.keys(CRYPTO_METADATA)} />
+    </main>
+  );
 }
