@@ -1,13 +1,8 @@
+import { Crypto } from "@/types/crypto";
 import { formatPercentage, formatPrice } from "@/utils/format";
 import styles from "./CryptoCard.module.css";
 
-interface CryptoCardProps {
-  name: string;
-  symbol: string;
-  logoUrl: string;
-  price: number;
-  priceChange24h?: number;
-}
+type CryptoCardProps = Omit<Crypto, "id">;
 
 export function CryptoCard({
   name,
