@@ -1,5 +1,4 @@
 import { SimplePriceParams, PriceData } from "@/types/coingecko-types";
-import { useQuery } from "@tanstack/react-query";
 
 const COINGECKO_BASE_URL = "https://api.coingecko.com/api/v3";
 
@@ -12,7 +11,9 @@ export async function getSimplePrice(
     include_24hr_change: String(true),
   });
 
-  const response = await fetch(`${COINGECKO_BASE_URL}/simple/price?${params}`);
+  const response = await fetch(`${COINGECKO_BASE_URL}/simple/price?${params}`, {
+    next: { revalidate: 60 },
+  });
 
   if (!response.ok) {
     throw new Error(`Failed to fetch prices: ${response.status}`);
