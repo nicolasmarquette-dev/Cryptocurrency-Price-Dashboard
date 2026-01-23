@@ -1,14 +1,20 @@
 .button {
-  padding: 0.5rem 1rem;
-  background-color: #0a0a0a;
-  color: #fafafa;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #ffffff;
   border: none;
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.875rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .button:hover {
-  background-color: #262626;
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
 }

@@ -4,6 +4,6 @@
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 0.875rem;
 }

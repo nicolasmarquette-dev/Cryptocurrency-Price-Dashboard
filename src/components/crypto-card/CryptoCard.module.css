@@ -6,17 +6,17 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
-  background-color: white;
+  border-radius: 0.75rem;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
   padding: 1rem;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .card:hover {
-  border-color: #0a0a0a;
+  border-color: var(--primary);
+  background-color: var(--card-hover);
 }
 
 .logo {
@@ -37,13 +37,13 @@
 
 .name {
   font-weight: 600;
-  color: #111827;
+  color: var(--foreground);
 }
 
 .symbol {
   font-size: 0.875rem;
   text-transform: uppercase;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .priceRow {
@@ -55,7 +55,7 @@
 .price {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--foreground);
 }
 
 .percentageChange {
@@ -64,9 +64,9 @@
 }
 
 .positive {
-  color: #16a34a;
+  color: var(--positive);
 }
 
 .negative {
-  color: #dc2626;
+  color: var(--negative);
 }
