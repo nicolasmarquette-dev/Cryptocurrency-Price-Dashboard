@@ -1,4 +1,4 @@
-import { getSimplePrice } from "@/lib/coingecko-api";
+import { getSimplePrice } from "@/lib/coingecko.api";
 import { buildCryptoList } from "@/utils/crypto";
 import { CryptoCard } from "../crypto-card/CryptoCard";
 import styles from "./CryptoCardList.module.css";

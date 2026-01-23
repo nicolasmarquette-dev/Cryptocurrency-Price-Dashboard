@@ -1,4 +1,4 @@
-import { getSimplePrice } from "@/lib/coingecko-api";
+import { getSimplePrice } from "@/lib/coingecko.api";
 import { SimplePriceParams } from "@/types/coingecko-types";
 import { useQuery } from "@tanstack/react-query";
 
