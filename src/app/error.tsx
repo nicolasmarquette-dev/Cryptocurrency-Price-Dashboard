@@ -1,6 +1,6 @@
 "use client";
 
-import { Error } from "@/components/error/Error";
+import { Error } from "@/components/common/error/Error";
 
 export default function ErrorPage() {
   const handleRetry = () => {

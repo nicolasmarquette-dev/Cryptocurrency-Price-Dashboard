@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { CryptoCardList } from "@/components/crypto-card-list/CryptoCardList";
-import { Loading } from "@/components/loading/Loading";
+import { Loading } from "@/components/common/loading/Loading";
 import { CRYPTO_METADATA } from "@/constants/crypto";
 
 export default function Home() {

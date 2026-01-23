@@ -1,3 +1,4 @@
+import { Button } from "../button/Button";
 import { ErrorLabels } from "./Error.labels";
 import styles from "./Error.module.css";
 
@@ -6,15 +7,14 @@ interface ErrorProps {
   onRetry?: () => void;
 }
 
-export function Error({ message = ErrorLabels.defaultMessage, onRetry }: ErrorProps) {
+export function Error({
+  message = ErrorLabels.defaultMessage,
+  onRetry,
+}: ErrorProps) {
   return (
     <div className={styles.container}>
       <span>{message}</span>
-      {onRetry && (
-        <button className={styles.retryButton} onClick={onRetry}>
-          {ErrorLabels.retry}
-        </button>
-      )}
+      {onRetry && <Button onClick={onRetry}>{ErrorLabels.retry}</Button>}
     </div>
   );
 }
