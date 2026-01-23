@@ -19,16 +19,22 @@
   font-weight: 700;
   color: var(--foreground);
   margin: 0 0 0.75rem 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-align: left;
 }
 
 .subtitle {
   font-size: 1rem;
   color: var(--text-muted);
   margin: 0;
+  text-align: left;
 }
 
 @media (max-width: 640px) {
@@ -38,5 +44,15 @@
 
   .subtitle {
     font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .title {
+    white-space: pre-line;
+  }
+
+  .subtitle {
+    white-space: pre-line;
   }
 }

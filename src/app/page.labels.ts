@@ -1,4 +1,5 @@
 export const HomePageLabels = {
-  title: "Cryptocurrency Price Dashboard",
-  subtitle: "Track cryptocurrency prices in real-time",
+  title: "Get ahead. Stay informed. Own \nthe future of finance.",
+  subtitle:
+    "Buy, sell, and securely store crypto-assets with a trusted,\n regulated provider in the EU.",
 };
