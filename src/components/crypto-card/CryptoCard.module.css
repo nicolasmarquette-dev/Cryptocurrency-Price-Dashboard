@@ -1,3 +1,7 @@
+.link {
+  text-decoration: none;
+}
+
 .card {
   display: flex;
   align-items: center;
@@ -7,6 +11,12 @@
   background-color: white;
   padding: 1rem;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: #0a0a0a;
 }
 
 .logo {

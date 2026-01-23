@@ -20,6 +20,7 @@ export async function CryptoCardList({ cryptoIds }: CryptoCardListProps) {
       {cryptos.map((crypto) => (
         <CryptoCard
           key={crypto.id}
+          id={crypto.id}
           name={crypto.name}
           symbol={crypto.symbol}
           logoUrl={crypto.logoUrl}
