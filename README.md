@@ -95,6 +95,21 @@ src/
 4. **Client-side Theme Persistence**: Theme preference is stored in localStorage, not synced across devices.
 5. **CoinGecko Rate Limits**: The application respects CoinGecko's free tier rate limits through caching.
 
+## Testing
+
+The project uses [Vitest](https://vitest.dev/) for unit testing. Tests are located in the `tests/` folder.
+
+### Running Tests
+
+```bash
+npm test        # Run tests in watch mode
+npm run test:run  # Run tests once
+```
+
+### Test Coverage
+
+- **Utility functions**: `formatPrice`, `formatPercentage`, `buildCryptoList`
+
 ## Tech Stack
 
 - [Next.js 15](https://nextjs.org/) - React framework
@@ -103,3 +118,4 @@ src/
 - [Tailwind CSS](https://tailwindcss.com/) - Utility classes
 - [CSS Modules](https://github.com/css-modules/css-modules) - Component styling
 - [CoinGecko API](https://www.coingecko.com/api) - Cryptocurrency data
+- [Vitest](https://vitest.dev/) - Unit testing
