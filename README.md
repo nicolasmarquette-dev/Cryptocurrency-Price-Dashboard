@@ -95,6 +95,17 @@ src/
 4. **Client-side Theme Persistence**: Theme preference is stored in localStorage, not synced across devices.
 5. **CoinGecko Rate Limits**: The application respects CoinGecko's free tier rate limits through caching.
 
+## Limitations
+
+### CoinGecko API Rate Limiting
+
+This application uses the free tier of the CoinGecko API, which has strict rate limits (approximately 10-30 requests per minute). If you refresh the page too frequently or make too many requests, you may encounter errors or be temporarily blocked.
+
+To mitigate this:
+- Data is cached server-side with a 60-second revalidation period
+- Avoid excessive page refreshes during development
+- Consider using a CoinGecko API key for higher rate limits in production
+
 ## Testing
 
 The project uses [Vitest](https://vitest.dev/) for unit testing. Tests are located in the `tests/` folder.
